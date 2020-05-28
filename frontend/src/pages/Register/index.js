@@ -8,8 +8,10 @@ import { Input } from '../../components/Input';
 
 import { Container, ContainerButton, Label, Div } from './styles';
 
+import api from '../../services/api';
+
 export default function Register() {
-	const [username, setUsername] = useState('');
+	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 
 	const history = useHistory();
@@ -18,8 +20,21 @@ export default function Register() {
 		return history.goBack();
 	};
 
-	const haddleRegister = () => {
-		return;
+	const haddleRegister = async () => {
+		if (!name.trim() || !email.trim()) {
+			return alert('Insira os dados antes de avançar!');
+		}
+
+		const user = { name, email };
+		await api
+			.post('/user', user)
+			.then(() => {
+				alert('O email foi cadastrado!!');
+				window.location.href = '/';
+			})
+			.catch(() => {
+				return alert('Ocorreu um erro ao cadastrar este email!');
+			});
 	};
 
 	return (
@@ -28,8 +43,8 @@ export default function Register() {
 			<Container>
 				<Label>Nome:</Label>
 				<Input
-					textInputChange={(event) => setUsername(event.target.value)}
-					value={username}
+					textInputChange={(event) => setName(event.target.value)}
+					value={name}
 				/>
 
 				<Label>E-mail:</Label>
