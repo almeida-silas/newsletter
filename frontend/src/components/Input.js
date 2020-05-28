@@ -8,6 +8,12 @@ const handdleInput = ({ className, textInputChange, value }) => {
 	);
 };
 
+const handdleInputTextArea = ({ className, textInputChange, value }) => {
+	return (
+		<textarea className={className} onChange={textInputChange} value={value} />
+	);
+};
+
 export const Input = styled(handdleInput)`
 	display: flex;
 	height: 25px;
@@ -15,7 +21,7 @@ export const Input = styled(handdleInput)`
 	margin-bottom: 10px;
 `;
 
-export const InputTextarea = styled.textarea`
+export const InputTextarea = styled(handdleInputTextArea)`
 	display: flex;
 	width: 40%;
 	height: 200px;
