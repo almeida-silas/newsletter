@@ -1,7 +1,9 @@
 import Queue from 'bull';
 
-import redisConfig from '../config/redis';
+import redisConfig from '../../config/redis';
 import * as jobs from '../job';
+
+import SendMessageController from '../Controllers/SendMessageController';
 
 const queues = Object.values(jobs).map((job) => ({
 	bull: new Queue(job.key, redisConfig),
@@ -26,8 +28,10 @@ export default {
 				console.log(error);
 			});
 
-			queue.bull.on('completed', (job) => {
-				console.log('completed', job.data);
+			queue.bull.on('completed', async (job) => {
+				const { user, message } = job.data;
+
+				await SendMessageController.save(user, message);
 			});
 		});
 	},
