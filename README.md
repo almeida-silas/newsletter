@@ -5,10 +5,6 @@
 
 <p align="center">A project developed to solve a problem proposed by the teacher in my course.</p>
 
-# Organization
-
-[Trello](https://trello.com/b/Jg1ddrvE/oslec)
-
 # Getting started
 
 1. clone this repo using `git clone https://github.com/s1lasjee/newsletter.git`
