@@ -11,12 +11,12 @@
 2. Move yourself to the appropriate directory: `cd newsletter`
 3. Run `yarn` to install dependencies
 
-# Getting started with frontend app
+# Front-end
 
-1. Move yourself to the backend folder: `cd frontend`
+1. Move yourself to the front-end folder: `cd frontend`
 2. Run `yarn start`
 
-# Getting started with backend app
+# Back-end
 
-1. Move yourself to the backend folder: `cd backend`
+1. Move yourself to the back-end folder: `cd backend`
 2. Run `yarn dev`
