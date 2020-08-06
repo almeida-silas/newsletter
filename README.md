@@ -3,7 +3,7 @@
   Newsletter
 </h1>
 
-<p align="center">A project developed to solve a problem proposed by the teacher in my course.</p>
+<p align="center">A project developed to solve a problem proposed by the professor in my course.</p>
 
 # Getting started
 
